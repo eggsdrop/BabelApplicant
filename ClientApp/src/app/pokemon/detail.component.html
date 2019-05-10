@@ -1,0 +1,92 @@
+<h3>{{isEdit ? 'Pokemon Details' : 'Create Pokemon'}}</h3>
+
+<p *ngIf="isEdit && !response"><strong>Loading...</strong></p>
+
+<div *ngIf="isEdit && (response && response.status !== 'Success')" class="alert alert-danger">
+    <strong>Error:</strong> Pokemon not found!
+</div>
+
+<div *ngIf="isEdit && action" class="alert alert-success alert-dismissible d-flex justify-content-between mb-2">
+    <div class="p-2">
+        <strong>Successfully {{ action === 'added' ? 'added' : 'updated'}}:</strong> {{model.name}}.
+        <a [routerLink]="['/list']"><i class="fas fa-arrow-left"></i> Back to the Pokemon list</a>
+    </div>
+    <div class="p-2 dismissable" (click)="onDismissAlert()">X</div>
+</div>
+
+<div *ngIf="!isEdit && (response && response.status !== 'Success')" class="alert alert-danger">
+    <strong>Error:</strong> {{response.message}}
+</div>
+
+<form *ngIf="!isEdit || (response && response.data && model)" #pokemonForm="ngForm" name="pokemonForm" (ngSubmit)="onSave(pokemonForm)">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="id" class="control-label">National Number *</label>
+            <input type="number" class="form-control" name="id" placeholder="National Number*"
+              #id="ngModel"
+              [(ngModel)]="model.id"
+              required>
+            <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert alert-danger">
+                <div>National number is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="name" class="control-label">Name *</label>
+                <input type="text" class="form-control" name="name" placeholder="Pokemon Name*" #name="ngModel" [(ngModel)]="model.name" required>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                    <div>Name is required</div>
+                </div>
+            </div>
+        </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="name" class="control-label">Health Points</label>
+            <input type="text" class="form-control" name="healthpoints" placeholder="Health Points" [(ngModel)]="model.healthPoints">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name" class="control-label">Speed</label>
+            <input type="text" class="form-control" name="speed" placeholder="Speed" [(ngModel)]="model.speed">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="name" class="control-label">Attack</label>
+            <input type="text" class="form-control" name="attack" placeholder="Attack" [(ngModel)]="model.attack">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name" class="control-label">Defense</label>
+            <input type="text" class="form-control" name="defense" placeholder="Defense" [(ngModel)]="model.defense">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="name" class="control-label">Special Attack</label>
+            <input type="text" class="form-control" name="specialattack" placeholder="Special Attack" [(ngModel)]="model.specialAttack">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name" class="control-label">Special Defense</label>
+            <input type="text" class="form-control" name="specialdefense" placeholder="Special Defense" [(ngModel)]="model.specialDefense">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Types:</label>
+    </div>
+    <div class="form-group">
+        <label class="checkbox-inline" *ngFor="let pokemonType of pokemonTypes.getTypes();">
+            <input type="checkbox" name="types" value="{{pokemonType.id}}" [checked]="model.isType(pokemonType.id)" (change)="onTypeChange(pokemonType.id)"> <span class="poketype {{pokemonType.name.toLowerCase()}}">{{pokemonType.name}}</span>
+        </label>
+    </div>
+    <div class="d-flex flex-row-reverse">
+        <div class="alert alert-info">* indicates a required field</div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn" [routerLink]="['/list']">Cancel</button>
+    </div>
+</form>
+
+<p>&nbsp;</p>
+
+<p><a [routerLink]="['/list']"><i class="fas fa-arrow-left"></i> Back to the Pokemon list</a></p>

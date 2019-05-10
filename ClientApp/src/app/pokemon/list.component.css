@@ -1,0 +1,74 @@
+.poketype {
+	margin: 0 5px;
+    padding: 0 6px 0 4px;
+    width: 32px;
+    height: 14px;
+    padding: 0;
+    margin: 1px;
+    display: inline-block;
+}
+.poketype.normal {
+    background-image: url(../../assets/images/pokemon-type-normal.png);
+}
+.poketype.fire {
+    background-image: url(../../assets/images/pokemon-type-fire.png);
+}
+.poketype.water {
+    background-image: url(../../assets/images/pokemon-type-water.png);
+}
+.poketype.electric {
+    background-image: url(../../assets/images/pokemon-type-electric.png);
+}
+.poketype.grass {
+    background-image: url(../../assets/images/pokemon-type-grass.png);
+}
+.poketype.ice {
+    background-image: url(../../assets/images/pokemon-type-ice.png);
+}
+.poketype.fighting {
+    background-image: url(../../assets/images/pokemon-type-fighting.png);
+}
+.poketype.poison {
+    background-image: url(../../assets/images/pokemon-type-poison.png);
+}
+.poketype.ground {
+    background-image: url(../../assets/images/pokemon-type-ground.png);
+}
+.poketype.flying {
+    background-image: url(../../assets/images/pokemon-type-flying.png);
+}
+.poketype.psychic  {
+    background-image: url(../../assets/images/pokemon-type-psychic.png);
+}
+.poketype.bug {
+    background-image: url(../../assets/images/pokemon-type-bug.png);
+}
+.poketype.rock {
+    background-image: url(../../assets/images/pokemon-type-rock.png);
+}
+.poketype.ghost {
+    background-image: url(../../assets/images/pokemon-type-ghost.png);
+}
+.poketype.dragon {
+    background-image: url(../../assets/images/pokemon-type-dragon.png);
+}
+.poketype.dark {
+    background-image: url(../../assets/images/pokemon-type-dark.png);
+}
+.poketype.steel {
+    background-image: url(../../assets/images/pokemon-type-steel.png);
+}
+.poketype.fairy {
+    background-image: url(../../assets/images/pokemon-type-fairy.png);
+}
+.poketype.hidden {
+    display: none;
+}
+td.pokemon-thumbnail-cell {
+    width: 64px;
+    padding: 0;
+}
+.pokemon-thumbnail {
+    height: 64px;
+    width: 64px;
+}

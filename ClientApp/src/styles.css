@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* dialog styles */
+.mat-dialog-content {
+    border-bottom: solid 1px #aaa;
+}
+.confirm-dialog-content {
+    margin: 15px 0 25px 0;
+}
+
+/* alert styles */
+.dismissable:hover {
+    cursor: pointer;
+}
+/* general color styles */
+.red {
+    color: #c00;
+}
+.red:hover {
+    color: #900;
+}

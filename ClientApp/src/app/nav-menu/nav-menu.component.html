@@ -1,0 +1,27 @@
+<header>
+  <nav class='navbar nav nav-pills navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3'>
+    <div class="container">
+      <a class="navbar-brand" [routerLink]='["/"]'>
+        <img src="https://www.babelhealth.com/wp-content/uploads/2017/03/logo.png" alt="Babel Health" />
+        <p>Applicant CRUD Application</p>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }' [routerLink]='["/"]'><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]='["active"]' [routerLink]='["/list"]'><i class="fas fa-dot-circle"></i> Pokemon</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLinkActive]='["active"]' [routerLink]='["/about"]'><i class="fas fa-info"></i> About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

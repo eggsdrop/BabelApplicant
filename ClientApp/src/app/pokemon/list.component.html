@@ -1,0 +1,40 @@
+<h3>Pokemon</h3>
+
+<p *ngIf="!response"><strong>Loading...</strong></p>
+
+<div *ngIf="response && !response.isSuccess()">
+  <div class="alert alert-danger">
+    <strong>Error:</strong> {{response.message}}.
+  </div>
+  <br />
+  <p><a tabindex="1" (click)="onLoadList()">Reload list</a></p>
+</div>
+
+<div *ngIf="response && response.isSuccess() && !response.isData()" class="alert alert-warning">
+    No pokemon found
+</div>
+
+<table *ngIf="response && response.isData()" class='table table-hover'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Type(s)</th>
+      <th style="text-align: right;">
+          <a [routerLink]="['/detail/add']" title="Add New"><i class="fas fa-plus-circle" style="font-size: 24px;"></i></a>
+        </th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of response.data">
+      <td class="pokemon-thumbnail-cell"><img src="./assets/images/pokemon/{{p.id}}.png" alt="{{p.name}}" class="pokemon-thumbnail" /></td>
+      <td>{{ p.name }}</td>
+      <td><span *ngFor="let type of pokemonTypes.getTypes();" class="poketype {{p.isType(type.id) ? type.name.toLowerCase() : 'hidden'}}"></span></td>
+      <td style="text-align: right;">
+          <a [routerLink]="['/detail/', p.id]" title="Edit"><i class="fas fa-edit"></i></a>
+          &nbsp;
+          <a title="Delete" (click)="onDelete(p.id, p.name)"><i class="fas fa-trash red"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

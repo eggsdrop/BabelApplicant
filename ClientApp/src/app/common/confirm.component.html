@@ -1,0 +1,11 @@
+<div>
+  <h2>Confirm Action:</h2>
+  <mat-dialog-content>
+    <div class="confirm-dialog-content">You are about to {{ dialogData.action }} {{ dialogData.content }}. Continue?</div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="btn btn-primary" mat-button [mat-dialog-close]='true'>Ok</button>
+    &nbsp;
+    <button class="btn" mat-button [mat-dialog-close]='false'>Cancel</button>
+  </mat-dialog-actions>
+</div>

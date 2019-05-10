@@ -1,0 +1,60 @@
+.poketype {
+	margin: 0 5px;
+	padding: 0 6px 0 4px;
+	color: #fff;
+	display: inline-block;
+	border-radius: 5px;
+}
+.poketype.normal {
+	background-color: #999;
+}
+.poketype.fire {
+	background-color: #d50;
+}
+.poketype.water {
+	background-color: #36f;
+}
+.poketype.electric {
+	background-color: #fc3;
+}
+.poketype.grass {
+	background-color: #3c3;
+}
+.poketype.ice {
+	background-color: #6cf;
+}.poketype.fighting {
+	background-color: #a63;
+}
+.poketype.poison {
+	background-color: #96a;
+}
+.poketype.ground {
+	background-color: #a96;
+}
+.poketype.flying {
+	background-color: #aaf;
+}
+.poketype.psychic  {
+	background-color: #f69;
+}
+.poketype.bug {
+	background-color: #9a6;
+}
+.poketype.rock {
+	background-color: #ba9;
+}
+.poketype.ghost {
+	background-color: #66f;
+}
+.poketype.dragon {
+	background-color: #86c;
+}
+.poketype.dark {
+	background-color: #663;
+}
+.poketype.steel {
+	background-color: #aaa;
+}
+.poketype.fairy {
+	background-color: #f6f;
+}
